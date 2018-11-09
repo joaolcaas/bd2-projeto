@@ -1,0 +1,10 @@
+
+questão 1:
+SELECT DISTINCT
+
+questão 2:
+
+questão3:
+...
+fetch first 3 rows only; --> para retornar as primeiras linhas
+

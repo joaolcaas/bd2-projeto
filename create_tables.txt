@@ -1,0 +1,9 @@
+CREATE TABLE dim_professor (id_professor INTEGER PRIMARY KEY, nome VARCHAR2(15));
+
+CREATE TABLE dim_disciplina (id_disciplina INTEGER PRIMARY KEY, nome VARCHAR2(60), sigla VARCHAR2(6), area VARCHAR2(6), carga INTEGER, creditos INTEGER);
+
+CREATE TABLE dim_curso (id_curso INTEGER PRIMARY KEY, nome VARCHAR2(45));
+
+CREATE TABLE dim_sala (id_sala INTEGER PRIMARY KEY, codigo VARCHAR2(8), capacidade INTEGER);
+
+CREATE TABLE fat_alocacao (id_disciplina INTEGER, id_professor INTEGER, id_curso INTEGER, cod_turma INTEGER, id_sala INTEGER, periodo VARCHAR2(6), qtde_alunos INTEGER, media_turma NUMBER(4,2), CONSTRAINT dis_fk FOREIGN KEY (id_disciplina) REFERENCES dim_disciplina (id_disciplina), CONSTRAINT prof_fk FOREIGN KEY (id_professor) REFERENCES dim_professor (id_professor), CONSTRAINT cur_fk FOREIGN KEY (id_curso) REFERENCES dim_curso (id_curso), CONSTRAINT sala_fk FOREIGN KEY (id_sala) REFERENCES dim_sala (id_sala));
