@@ -4,6 +4,14 @@ SELECT DISTINCT
 
 questão 2:
 
+select nome from dim_professor
+
+MINUS
+
+select DISTINCT p.nome from fat_alocacao f, dim_professor p,dim_curso c 
+where p.id_professor = f.id_professor and f.id_curso = c.id_curso
+and c.nome = 'Pós-Graduação em Ciência da Computação'
+
 questão3:
 ...
 fetch first 3 rows only; --> para retornar as primeiras linhas
