@@ -6,7 +6,8 @@ CREATE TABLE dim_obj_tab_curso OF dim_obj_curso (CONSTRAINT id_curso_pk PRIMARY 
 
 CREATE TABLE dim_obj_tab_sala OF dim_obj_sala (CONSTRAINT id_sala_pk PRIMARY KEY (id_sala));
 
-CREATE TABLE fat_obj_tab_alocacao OF FAT_OBJ_ALOCACAO (CONSTRAINT id_disciplina_fk FOREIGN KEY (id_disciplina) REFERENCES (dim_obj_tab_disciplina),
-                                                      CONSTRAINT id_professor_fk FOREIGN KEY (id_professor) REFERENCES (dim_obj_tab_professor), 
-                                                      CONSTRAINT id_curso_fk FOREIGN KEY (id_curso) REFERENCES (dim_obj_tab_curso), 
-                                                      CONSTRAINT id_sala_fk FOREIGN KEY (id_sala) REFERENCES (dim_obj_tab_sala));
+
+CREATE TABLE fat_obj_tab_alocacao OF FAT_OBJ_ALOCACAO (CONSTRAINT id_disciplina_fk FOREIGN KEY (id_disciplina) REFERENCES dim_obj_tab_disciplina,
+                                                      CONSTRAINT id_professor_fk FOREIGN KEY (id_professor) REFERENCES dim_obj_tab_professor, 
+                                                      CONSTRAINT id_curso_fk FOREIGN KEY (id_curso) REFERENCES dim_obj_tab_curso, 
+                                                      CONSTRAINT id_sala_fk FOREIGN KEY (id_sala) REFERENCES dim_obj_tab_sala);
