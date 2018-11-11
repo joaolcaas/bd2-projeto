@@ -1,0 +1,38 @@
+create or replace type dim_obj_professor as object(
+    id_professor INTEGER,
+    nome varchar2(15)
+);
+/
+create or replace type dim_obj_disciplina as object(
+    id_disciplina INTEGER,
+    nome varchar2(60),
+    sigla varchar2(6),
+    area varchar2(6),
+    carga INTEGER,
+    creditos INTEGER
+);
+/
+
+create or replace type dim_obj_curso as object(
+    id_curso INTEGER,
+    nome varchar(45)
+);
+/
+
+create or replace type dim_obj_sala as object(
+    id_sala INTEGER,
+    codigo varchar2(8),
+    capacidade INTEGER
+);
+/
+
+create or replace type fat_obj_alocacao as object(
+    id_disciplina ref dim_obj_disciplina,
+    id_professor ref dim_obj_professor,
+    id_curso ref dim_obj_curso,
+    cod_turma INTEGER,
+    id_sala ref dim_obj_sala,
+    periodo varchar2(6),
+    qtde_alunos INTEGER,
+    media_turma NUMBER(4,2)
+);
