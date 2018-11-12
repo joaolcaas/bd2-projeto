@@ -18,7 +18,7 @@ SELECT p.nome, SUM(d.carga)/COUNT(*) AS MEDIA_CH
 FROM fat_alocacao f, dim_professor p, dim_disciplina d 
 WHERE f.id_disciplina = d.id_disciplina AND f.id_professor = p.id_professor 
 GROUP BY p.nome 
-ORDER BY MEDIA_CH desc
+ORDER BY MEDIA_CH desc,SUM(d.carga) desc
 fetch first 5 rows only
 /
 
