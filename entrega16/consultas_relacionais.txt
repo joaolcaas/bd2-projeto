@@ -53,6 +53,6 @@ select DISTINCT p.nome, count(DISTINCT D.NOME) as DISC_PROF
 from  fat_alocacao f,dim_disciplina d,dim_professor p 
 where d.id_disciplina = f.id_disciplina and p.id_professor = f.id_professor
 group by p.nome
-order by DISC_PROF DESC
+order by DISC_PROF desc,p.nome asc
 fetch first 5 rows only
 /
