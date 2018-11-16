@@ -1,5 +1,0 @@
-drop type dim_obj_curso FORCE;
-drop type dim_obj_professor force;
-drop type dim_obj_disciplina force;
-drop type dim_obj_sala force;
-drop type fat_obj_alocacao force;

@@ -1,8 +1,8 @@
-select DISTINCT d.nome, count(DISTINCT P.NOME) as QTD_PROF
+select  d.nome, count(DISTINCT f.id_professor) as QTD_PROF
 from  fat_alocacao f,dim_disciplina d,dim_professor p 
 where d.id_disciplina = f.id_disciplina and p.id_professor = f.id_professor
-group by d.nome
-order by QTD_PROF DESC
+group by d.nome,d.id_disciplina
+order by QTD_PROF DESC,d.nome
 /
 
 select nome from dim_professor

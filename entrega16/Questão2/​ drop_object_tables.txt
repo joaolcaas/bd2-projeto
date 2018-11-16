@@ -1,0 +1,9 @@
+drop table fat_obj_tab_alocacao;
+
+drop table dim_obj_tab_professor;
+
+drop table dim_obj_tab_disciplina;
+
+drop table dim_obj_tab_curso;
+
+drop table dim_obj_tab_sala;

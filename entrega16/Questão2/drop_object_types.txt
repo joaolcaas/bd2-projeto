@@ -1,0 +1,17 @@
+drop type fat_obj_alocacao;
+
+drop type dim_obj_professor;
+
+drop type dim_obj_sala;
+
+drop type dim_obj_disciplina;
+
+drop type dim_obj_curso;
+
+
+
+
+
+
+
+

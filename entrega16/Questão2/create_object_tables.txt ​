@@ -1,0 +1,10 @@
+CREATE TABLE dim_obj_tab_professor OF dim_obj_professor;
+
+CREATE TABLE dim_obj_tab_disciplina OF dim_obj_disciplina;
+
+CREATE TABLE dim_obj_tab_curso OF dim_obj_curso;
+
+CREATE TABLE dim_obj_tab_sala OF dim_obj_sala;
+
+CREATE TABLE fat_obj_tab_alocacao OF FAT_OBJ_ALOCACAO;
+

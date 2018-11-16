@@ -1,0 +1,15 @@
+alter table dim_obj_tab_professor add constraint id_professor_pk PRIMARY KEY (id_professor);
+
+alter table dim_obj_tab_disciplina add constraint id_disciplina_pk PRIMARY KEY(id_disciplina);
+
+alter table dim_obj_tab_curso add constraint id_curso_pk PRIMARY KEY(id_curso);
+
+alter table dim_obj_tab_sala add constraint id_sala_pk PRIMARY KEY(id_sala);
+
+alter table fat_obj_tab_alocacao add constraint id_disciplina_fk FOREIGN KEY (id_disciplina) REFERENCES dim_obj_tab_disciplina;
+
+alter table fat_obj_tab_alocacao add CONSTRAINT id_professor_fk FOREIGN KEY (id_professor) REFERENCES dim_obj_tab_professor,
+
+alter table fat_obj_tab_alocacao add CONSTRAINT id_curso_fk FOREIGN KEY (id_curso) REFERENCES dim_obj_tab_curso, 
+
+alter table fat_obj_tab_alocacao add CONSTRAINT id_sala_fk FOREIGN KEY (id_sala) REFERENCES dim_obj_tab_sala
