@@ -1,0 +1,31 @@
+MERGE INTO dim_obj_tab_professor p
+    USING dim_professor pt
+    ON (p.id_professor = pt.id_professor)
+  WHEN NOT MATCHED THEN
+    INSERT VALUES (pt.id_professor,pt.nome);
+
+MERGE INTO dim_obj_tab_disciplina d
+    USING dim_disciplina dt
+    ON (d.id_disciplina = dt.id_disciplina)
+  WHEN NOT MATCHED THEN
+    INSERT VALUES (dt.id_disciplina,
+                    dt.nome,
+                    dt.sigla,
+                    dt.area,
+                    dt.carga,
+                    dt.creditos);
+
+MERGE INTO dim_obj_tab_curso c
+    USING dim_curso ct
+    ON (c.id_curso = ct.id_curso)
+  WHEN NOT MATCHED THEN
+    INSERT VALUES (ct.id_curso,
+                    ct.nome);
+
+MERGE INTO dim_obj_tab_sala s
+    USING dim_sala st
+    ON (s.id_sala = st.id_sala)
+  WHEN NOT MATCHED THEN
+    INSERT VALUES (st.id_sala,
+                    st.codigo,
+                    st.capacidade);
