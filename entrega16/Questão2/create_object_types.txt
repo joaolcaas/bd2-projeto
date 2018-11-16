@@ -30,8 +30,8 @@ create or replace type fat_obj_alocacao as object(
     id_disciplina ref dim_obj_disciplina,
     id_professor ref dim_obj_professor,
     id_curso ref dim_obj_curso,
-    cod_turma INTEGER,
     id_sala ref dim_obj_sala,
+    cod_turma INTEGER,
     periodo varchar2(6),
     qtde_alunos INTEGER,
     media_turma NUMBER(4,2)
