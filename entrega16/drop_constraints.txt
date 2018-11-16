@@ -1,0 +1,23 @@
+ALTER TABLE dim_obj_tab_disciplina
+DROP CONSTRAINT id_disciplina_pk;
+/
+ALTER TABLE dim_obj_tab_professor
+DROP CONSTRAINT id_professor_pk;
+/
+ALTER TABLE dim_obj_tab_curso
+DROP CONSTRAINT id_curso_pk;
+/
+ALTER TABLE dim_obj_tab_sala
+DROP CONSTRAINT id_sala_pk;
+/
+ALTER TABLE fat_obj_tab_alocacao
+DROP CONSTRAINT id_disciplina_fk;
+/
+ALTER TABLE fat_obj_tab_alocacao
+DROP CONSTRAINT id_professor_fk;
+/
+ALTER TABLE fat_obj_tab_alocacao
+DROP CONSTRAINT id_curso_fk;
+/
+ALTER TABLE fat_obj_tab_alocacao
+DROP CONSTRAINT id_sala_fk;

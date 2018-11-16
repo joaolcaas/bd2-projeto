@@ -29,3 +29,5 @@ MERGE INTO dim_obj_tab_sala s
     INSERT VALUES (st.id_sala,
                     st.codigo,
                     st.capacidade);
+
+
