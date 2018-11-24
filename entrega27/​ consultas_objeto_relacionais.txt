@@ -1,0 +1,55 @@
+
+select f.id_disciplina.nome as NOME, COUNT(DISTINCT(f.id_professor.nome)) as QTD_PROF
+from fat_obj_tab_alocacao f
+group by f.id_disciplina.nome
+order by QTD_PROF desc, nome asc;
+/
+
+select f.id_professor.nome
+from fat_obj_tab_alocacao f
+
+MINUS
+
+select DISTINCT f.id_professor.nome
+from fat_obj_tab_alocacao f
+where f.id_curso.nome ='Pós-Graduação em Ciência da Computação'
+/
+
+select f.id_professor.nome, sum(f.id_disciplina.carga)/COUNT(*) as MEDIA_CH
+from fat_obj_tab_alocacao f
+group by f.id_professor.nome
+order by MEDIA_CH desc, SUM(f.id_disciplina.carga) desc
+fetch first 5 rows only;
+/
+
+select DISTINCT f.id_professor.nome 
+from fat_obj_tab_alocacao f 
+where f.id_curso.nome = 'Bach. em Ciência da Computação'
+
+INTERSECT
+
+select DISTINCT f.id_professor.nome 
+from fat_obj_tab_alocacao f
+where f.id_curso.nome = 'Pós-Graduação em Ciência da Computação'
+/
+
+select f.id_sala.codigo, COUNT(f.id_sala.codigo) as COUNT_SALA
+from fat_obj_tab_alocacao f
+group by f.id_sala.codigo
+order by COUNT_SALA DESC
+fetch first 5 rows only;
+/
+
+select f.id_disciplina.nome, COUNT(f.cod_turma) QTD_TURMAS
+from fat_obj_tab_alocacao f
+group by f.id_disciplina.nome
+order by QTD_TURMAS DESC
+fetch first 5 rows only
+/
+
+select DISTINCT f.id_professor.nome, count(DISTINCT f.id_disciplina.nome) as DISC_PROF
+from  fat_obj_tab_alocacao f 
+group by f.id_professor.nome
+order by DISC_PROF desc,f.id_professor.nome asc
+fetch first 5 rows only
+/
