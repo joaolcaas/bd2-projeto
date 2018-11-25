@@ -1,0 +1,69 @@
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_DISCIPLINA';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_DISCIPLINA	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_OBJ_TAB_DISCIPLINA';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_OBJ_TAB_DISCIPLINA	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_CURSO';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_CURSO	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_OBJ_TAB_CURSO';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_OBJ_TAB_CURSO	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_PROFESSOR';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_PROFESSOR	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_OBJ_TAB_PROFESSOR';
+-- SEGMENT_NAME	ESPACO
+-- DIM_OBJ_TAB_PROFESSOR	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_SALA';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_SALA	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'DIM_OBJ_TAB_SALA';
+/
+-- SEGMENT_NAME	ESPACO
+-- DIM_OBJ_TAB_SALA	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'FAT_ALOCACAO';
+/
+-- SEGMENT_NAME	ESPACO
+-- FAT_ALOCACAO	.0625
+
+SELECT segment_name, bytes/1024/1024 AS espaco
+FROM user_extents
+WHERE segment_name = 'FAT_OBJ_TAB_ALOCACAO';
+/
+-- SEGMENT_NAME	ESPACO
+-- FAT_OBJ_TAB_ALOCACAO	.0625
+
