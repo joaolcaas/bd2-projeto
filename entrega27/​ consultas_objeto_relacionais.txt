@@ -4,15 +4,12 @@ from fat_obj_tab_alocacao f
 group by f.id_disciplina.nome
 order by QTD_PROF desc, nome asc;
 /
-
-select p.nome
+select DISTINCT p.nome
 from dim_obj_tab_professor p
-
-MINUS
-
-select DISTINCT f.id_professor.nome
-from fat_obj_tab_alocacao f
-where f.id_curso.nome ='Pós-Graduação em Ciência da Computação'
+where p.nome NOT IN (select distinct f.id_professor.nome 
+                                    from fat_obj_tab_alocacao f 
+                                    where f.id_curso.nome='Pós-Graduação em Ciência da Computação')
+order by p.nome
 /
 
 select f.id_professor.nome as NOME, sum(f.id_disciplina.carga)/COUNT(*) as MEDIA_CH
